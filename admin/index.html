@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>VintageAngle</h1>
+        <ul>
+            <li><a href="">Главная</a></li>
+            <li><a href="">Товары</a></li>
+            <li><a href="">Пользователи</a></li>
+        </ul>
+    </header>
+    <section>
+        <h1>VintageAngle</h1>
+        <div>
+            <div>
+                <h2>Таблица продукции</h2>
+                <a href="">Добавить</a>
+            </div>
+            <div>
+                <p>id</p>
+                <p>Название</p>
+                <p>Описание</p>
+                <p>Цена</p>
+                <p>Изображение</p>
+                <p>Тип</p>
+            </div>
+            <div>
+                <p>3</p>
+                <div>
+                <p>Lorem ipsum dolor sit amet</p>
+                    <ul class="treeline">
+                        <ul>
+                          <li>База знаний</li> 
+                        <ul>
+                          <li>Компоненты</li>
+                          <li>Плагины</li>
+                          <li>Модули</li>
+                        </ul>
+                        </ul>
+                   </ul>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ipsa quas modi, ipsum quidem tenetur, libero quia numquam asperiores nihil voluptatum quos fugit quae ratione vitae dolorum labore perferendis architecto!</p>
+                <p>7857857</p>
+                <img src="/Превью1.png" alt="">
+                <p>pirate</p>
+                <a href="">Изменить</a>
+                <button>Удалить</button>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+        let ul = document.querySelectorAll('.treeline > li:not(:only-child) ul, .treeline ul ul');
+        for (var i = 0; i < ul.length; i++) {
+             var div = document.createElement('div');
+             div.className = 'drop';
+             div.innerHTML = '+';
+             ul[i].parentNode.insertBefore(div, ul[i].previousSibling);
+             div.onclick = function() {
+               this.innerHTML = (this.innerHTML == '+' ? '−' : '+');
+               this.className = (this.className == 'drop' ? 'drop dropM' : 'drop');
+             }
+            }
+        });
+        </script>
+</body>
+</html>
