@@ -157,11 +157,12 @@ section div div:nth-child(3) button:hover{
 }
 
 .treeline li{
+  margin-left: 70px;
     font-size: 20px;
 }
 .treeline .drop {
     position: relative; 
-    left: -125px; 
+    left: 15px; 
     top: -20px; 
     bottom: 0;
     width: 20px;
@@ -178,6 +179,42 @@ section div div:nth-child(3) button:hover{
 }
  .treeline .dropM + ul {
     display: block;
-    margin-top: -15px;
+    margin-top: -5px;
     margin-left: 20px;
 }
+table{
+  width: 350px;
+}
+tr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+td{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 18px;
+}
+hr{
+  margin-right: 15px;
+}
+table tr:first-child td{
+  font-weight: bold;
+}
+table tr td:first-child{
+  width: 35px;
+}
+table tr td:nth-child(2){
+  width: 50px;
+}
+table tr td:nth-child(3){
+  width: 160px;
+}
+table tr td:nth-child(4){
+  width: 110px;
+}
+
+/* 1400 */

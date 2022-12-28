@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="indexItem.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+        <h1>VintageAngle</h1>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="indexIten.html">Товары</a></li>
+            <li><a href="">Пользователи</a></li>
+        </ul>
+    </header>
+    <section>
+      <h1>VintageAngle</h1>
+      <div>
+        <h2>Создание товара</h2>
+        <hr>
+        <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
+          <!-- @csrf -->
+          <div>
+            <label for="">Название</label>
+            <input type="text" name="title" placeholder="Введите название" required>
+          </div>
+          <div>
+            <label for="">Описание</label>
+            <textarea name="description" id="" cols="10" placeholder="Введите описание" rows="2" required></textarea>
+          </div>
+          <div>
+            <label for="">Изображение</label>
+            <input type="file" name="img" id="" required>
+          </div>
+          <div>
+             <label for="">Цена</label>
+            <input type="text" name="price" pattern="[0-9]+" required  placeholder="Введите цену">
+          </div>
+          <div>
+            <label for="">Тип товара</label>
+            <select name="type" class="form-control" id="selected">
+              <option value="car">Машина</option>
+              <option value="plate">Пластинка</option>
+            </select>
+            <div id="new-form">
+
+            </div>
+          </div>
+          <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+<script>
+let select = document.getElementById('selected');
+let form = document.getElementById('new-form');
+
+select.addEventListener('change', (e) => {
+form.innerHTML = '';
+if (e.target.value === 'plate') {
+form.innerHTML = `
+<div class="form-group">
+<label for="exampleInputPassword1">Лэйбел</label>
+<input type="text" name="label" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Жанр</label>
+<input type="text" name="genre" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group">
+<label>Дата релиза</label>
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+</div>
+<input type="text" name="date_creation" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+</div>
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Страна</label>
+<input type="text" name="country" class="form-control" id="exampleInputPassword1">
+</div>
+`;
+}else{
+form.innerHTML = `
+<div class="form-group">
+<label for="exampleInputPassword1">Год</label>
+<input type="text" name="year" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Пробег</label>
+<input type="text" name="mileage" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Мощность двигателя</label>
+<input type="text" name="drive_power" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Тип двигателя</label>
+<select name="drive_type" class="form-control">
+<option value="Бензиновый">Бензиновый</option>
+<option value="Дизельный">Дизельный</option>
+</select>
+</div>
+`;
+}
+console.log(e.target.value);
+});
+</script>
+</body>
+</html>
