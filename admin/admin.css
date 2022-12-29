@@ -14,6 +14,7 @@ body{
 }
 
 header{
+    position: fixed;
     width: 300px;
     height: 100vh;
     background-color: #353A40;
@@ -38,11 +39,14 @@ header ul li a{
     font-size: 22px;
     font-family: "Cuprum";
 }
+header ul li a img{
+    display: none;
+}
 
 
 section{
     width: 1570px;
-    margin-left: 25px;
+    margin-left: 325px;
 }
 section h1{
     font-size: 42px;
@@ -217,4 +221,43 @@ table tr td:nth-child(4){
   width: 110px;
 }
 
+@media  screen and (min-width: 1400px) and (max-width: 1600px) {
+    header{
+        position: fixed;
+        width: 100px;
+        height: 100vh;
+        background-color: #353A40;
+    }
+    header h1{
+        display: none;
+    }
+    header ul{
+        margin-left: 25px;
+        margin-top: 100px;
+    }
+    header ul li a p{
+        display: none;
+    }
+    header ul li a img{
+        display: block;
+    }
+    section{
+        width: 1360px;
+        margin-left: 115px;
+    }
+    section > div{
+        position: relative;
+        width: 1360px;
+    }
+    section div div:nth-child(3) a{
+        position: absolute;
+        margin-top: 40px;
+        right: 35px;
+    }
+    section div div:nth-child(3) button{
+        position: absolute;
+        margin-top: 80px;
+        right: 20px;
+    }
+}
 /* 1400 */
